@@ -1,5 +1,17 @@
-body {
+@font-face{
+  font-family:'HelveticaLight';
+  src: url('../fonts/helvetica_light/ae1656aa-5f8f-4905-aed0-93e667bd6e4a.eot');
+  src: url('../fonts/helvetica_light/ae1656aa-5f8f-4905-aed0-93e667bd6e4a.eot?iefix') format('eot'), 
+       url('../fonts/helvetica_light/530dee22-e3c1-4e9f-bf62-c31d510d9656.woff') format('woff'), 
+       url('../fonts/helvetica_light/688ab72b-4deb-4e15-a088-89166978d469.ttf') format('truetype'), 
+       url('../fonts/helvetica_light/7816f72f-f47e-4715-8cd7-960e3723846a.svg#7816f72f-f47e-4715-8cd7-960e3723846a') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, h1, p.lead {
 	color: #666666;
+	font-family: 'HelveticaLight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 a, a:visited {
 	color: #999999;
