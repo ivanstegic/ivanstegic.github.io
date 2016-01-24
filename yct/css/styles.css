@@ -12,8 +12,6 @@ button {
 }
 
 .column {
-	width: 33%;
-	float: left;
 	text-align: center;
 }
 .score {
@@ -23,11 +21,9 @@ button {
 #cooper {
 
 }
-
 #dad {
 
 }
-
 #eva {
 
 }
