@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title>Vaccine Progress Bot</title>
+	<link href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css" rel="stylesheet">
+	<meta content="4_AapzIm3A2Pc8FNqyCiLXPFHKjIg1BG-uClLTabp1I" name="google-site-verification">
+	<meta content="Vaccine Progress Bot" name="description">
+	<meta content="Ivan Stegic" name="author">
+</head>
+<body>
+	<section class="hero is-warning">
+		<div class="hero-body">
+			<div class="container has-text-centered">
+				<h1 class="title is-4">Vaccine Progress Bot <i class="fas fa-robot"></i></h1>
+				<p class="subtitle is-spaced is-6">By <a style="text-decoration: underline;" href="https://ivanstegic.com/">Ivan Stegic</a></p>
+				<h2 class="subtitle is-1 is-spaced">When will 85% of the United States be innoculated?</h2>
+				<div class="level">
+					<div class="level-item has-text-centered">
+						<div>
+							<p class="heading">Projected date</p>
+							<p class="title is-1"><span class="7d_rate_date">7D_RATE_DATE</span></p>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="level-item has-text-centered is-spaced">
+						<div>
+							<p class="heading">At an average pace of</p>
+							<p class="title is-3"><span class="7d_rate_average">7D_RATE_AVERAGE/day</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="container is-fluid is-full-width">
+		<div class="content">
+			<h2 class="is-spaced py-6 has-text-centered">A new projection every day. Powered by data.</h2>
+			<div class="level">
+				<div class="level-item has-text-centered">
+					<div>
+						<p class="heading">Doses administered</p>
+						<p class="title"><span class="doses_administered">DOSES_ADMINISTERED</span></p>
+					</div>
+				</div>
+				<div class="level-item has-text-centered">
+					<div>
+						<p class="heading">Doses outstanding</p>
+						<p class="title"><span class="doses_outstanding">DOSES_OUTSTANDING</span></p>
+					</div>
+				</div>
+				<div class="level-item has-text-centered">
+					<div>
+						<p class="heading">Percentage complete</p>
+						<p class="title"><span class="percentage_complete">PERCENTAGE_COMPLETE</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container is-fluid is-full-width">
+		<div class="columns">
+			<div class="column is-three-fifths py-6">
+				<div class="content">
+					<p>This is an up-to-date projection based on <a href="https://github.com/owid/covid-19-data/tree/master/public/data/vaccinations">current data from Our World In Data</a>, which collates publicly available, government reported data. It tries to answer these three questions:</p>
+					<ol>
+						<li>What's the current pace of vaccination? <b><span class="7d_rate_average">7D_RATE_AVERAGE/day</span></b></li>
+						<li>At this rate, when will 85% of us be innoculated? <b><span class="7d_rate_date">7D_RATE_DATE</span></b></li>
+						<li>Can we do a better job projecting that date using simple mathematics? <b>Maybe?</b></li>
+					</ol>
+					<p></p>
+					<p>Questions? Reach out to me on Twitter, my direct messages are open: <a href="https://twitter.com/ivanstegic">@ivanstegic</a></p>
+				</div>
+				<div class="box">
+					<p>Follow <a href="https://twitter.com/vacprogbot">@vacprogbot</a> on Twitter for daily, national updates.</p>
+				</div>				
+			</div>
+			<div class="column is-two-fifth content py-6 px-2">
+				<div class="content">
+					<p class="title is-size-4 py-0">All the numbers</p>
+					<p class="subtitle is-size-7 py-0">Updated 02/09/2021 7:08AM CT, <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7PO6gxOQ2uy-FELarebHLoUHntblNC1Z7f15OjPRwUI83IvUHfDAAauLqyaQqNkcS4DijjugjN8Aa/pubhtml#">source data tables</a></p>
+					<table class="table is-striped is-narrow  is-fullwidth">
+						<tbody>
+							<tr>
+								<th class="has-text-right"><a href="https://www.census.gov/quickfacts/fact/table/US/PST045219">US Population</a></th>
+								<td class="has-text-left">328,239,523</td>
+							</tr>
+							<tr>
+								<th class="has-text-right">Maximum doses (2x)</th>
+								<td class="has-text-left">656,479,046</td>
+							</tr>
+							<tr>
+								<th class="has-text-right"><a href="https://www.nytimes.com/2020/12/24/health/herd-immunity-covid-coronavirus.html">85% of doses</a></th>
+								<td class="has-text-left">558,007,189</td>
+							</tr>
+							<tr>
+								<th class="has-text-right">Doses administered</th>
+								<td class="has-text-left"><span class="doses_administered">DOSES_ADMINISTERED</span></td>
+							</tr>
+							<tr>
+								<th class="has-text-right">Doses outstanding</th>
+								<td class="has-text-left"><span class="doses_outstanding">DOSES_OUTSTANDING</span></td>
+							</tr>
+							<tr>
+								<th class="has-text-right">Percentage complete</th>
+								<td class="has-text-left"><span class="percentage_complete">PERCENTAGE_COMPLETE</span></td>
+							</tr>
+							<tr>
+								<th class="has-text-right">Doses yesterday</th>
+								<td class="has-text-left"><span class="1d_change">1D_CHANGE</span></td>
+							</tr>
+							<tr>
+								<th class="has-text-right">7 day average</th>
+								<td class="has-text-left"><span class="7d_rate_average">7D_RATE_AVERAGE/day</span></td>
+							</tr>
+							<tr>
+								<th class="has-text-right">At current pace</th>
+								<td class="has-text-left"><span class="7d_rate_date">7D_RATE_DATE</span></td>
+							</tr>
+							<tr>
+								<th class="has-text-right">Linear fit</th>
+								<td class="has-text-left"><span class="linear_date">LINEAR_DATE</span>&nbsp;(<span class="linear_rsq">LINEAR_RSQ</span>)</td>
+							</tr>
+							<tr>
+								<th class="has-text-right">Poly fit</th>
+								<td class="has-text-left"><span class="poly_date">POLY_DATE</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+	                var _gaq = _gaq || [];
+	                _gaq.push(['_setAccount', 'UA-29882500-1']);
+	                _gaq.push(['_trackPageview']);
+	                (function() {
+	                    var ga = document.createElement('script');
+	                    ga.type = 'text/javascript';
+	                    ga.async = true;
+	                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	                    var s = document.getElementsByTagName('script')[0];
+	                    s.parentNode.insertBefore(ga, s);
+	                })();
+	</script>
+</body>
+</html>
