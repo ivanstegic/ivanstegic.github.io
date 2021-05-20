@@ -12,8 +12,9 @@
     <meta name="author" content="Ivan Stegic">
     <script type="text/javascript">
         if(window.location.hash) {
-            var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
-            console.log(hash);            
+            var hash = window.location.hash.substring(1);
+            console.log(hash);
+            document.getElementById('domain').value=hash;
         }        
     </script>
 </head>
