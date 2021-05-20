@@ -10,6 +10,12 @@
     <meta name="google-site-verification" content="4_AapzIm3A2Pc8FNqyCiLXPFHKjIg1BG-uClLTabp1I" />
     <meta name="description" content="Domain For Sale">
     <meta name="author" content="Ivan Stegic">
+    <script type="text/javascript">
+        if(window.location.hash) {
+            var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+            console.log(hash);            
+        }        
+    </script>
 </head>
 
 <body>
@@ -18,10 +24,13 @@
         <div class="columns is-centered py-4">
             <div class="content column is-fullwidth-mobile is-half-tablet is-one-third-desktop is-one-third-widescreen is-one-quarter-fullhd">
                 <h1 class="title has-text-centered">
-                    Hello.
+                    👋🏻 Hello.
                 </h1>
                 <p class="subtitle has-text-centered">
-                    The domain you're looking for is probably for sale. Reach out to me (<a href="https://twitter.com/ivanstegic">@ivanstegic</a>) to make an offer: <a href="https://ivn.st/msg">https://ivn.st/msg</a>
+                    The domain you're looking for <span id="domain"></span> is for sale.
+                </p>
+                <p class="subtitle has-text-centered">
+                    Reach out to <a href="https://ivn.st/fs">Ivan Stegic</a> to make an offer. 
                 </p>
             </div>
         </div>
