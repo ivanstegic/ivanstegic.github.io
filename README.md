@@ -4,5 +4,4 @@
 
 
 * CEO of [TEN7](https://ten7.com/)
-* Host of [The TEN7 Podcast](https://ten7.com/podcast)
-* Creator of [Vaccine Progress Bot](https://ivanstegic.com/vacprogbot)
+* Host of [ONE OF 8 BILLION](https://1of8b.com/)
