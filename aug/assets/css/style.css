@@ -133,6 +133,10 @@ tr:hover {
     border-bottom: 3px double #333 !important; /* Double line border for bottom */
 }
 
+.top-dark-border {
+    border-top: 2px solid #222 !important;
+}
+
 .collapsible-row {
     cursor: pointer;
     position: relative;

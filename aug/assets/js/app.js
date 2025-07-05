@@ -191,19 +191,7 @@ const roiTable = document.getElementById('roi-table');
 
 // Restore selections from localStorage on page load
 window.addEventListener('DOMContentLoaded', function() {
-    const savedCountry = localStorage.getItem('selectedCountry');
-    const savedRole = localStorage.getItem('selectedRole');
-    if (savedCountry) {
-        countrySelect.value = savedCountry;
-        countrySelect.dispatchEvent(new Event('change'));
-        if (savedRole) {
-            // Wait for roles to populate
-            setTimeout(() => {
-                roleSelect.value = savedRole;
-                roleSelect.dispatchEvent(new Event('change'));
-            }, 0);
-        }
-    }
+    loadStateFromUrl(); // Load state from URL first
 });
 
 countrySelect.addEventListener('change', function() {
@@ -236,6 +224,9 @@ countrySelect.addEventListener('change', function() {
 
     // Reset role selection
     roleSelect.selectedIndex = 0;
+
+    // Update URL after country change
+    updateUrlParams();
 });
 
 roleSelect.addEventListener('change', function() {
@@ -246,6 +237,8 @@ roleSelect.addEventListener('change', function() {
     } else {
         tableContainer.style.display = 'none';
     }
+    // Update URL after role change
+    updateUrlParams();
 });
 
 // Hide role dropdown if country is reset
@@ -268,6 +261,63 @@ function saveCollapseState(country, role, state) {
 function loadCollapseState(country, role) {
     const state = localStorage.getItem(getCollapseStateKey(country, role));
     return state ? JSON.parse(state) : { Taxes: false, Benefits: false, "Other Costs": false };
+}
+
+// Function to update URL parameters based on current state
+function updateUrlParams() {
+    const params = new URLSearchParams(window.location.search);
+    const selectedCountry = countrySelect.value;
+    const selectedRole = roleSelect.value;
+    const collapseState = loadCollapseState(selectedCountry, selectedRole); // Get the current collapse state
+
+    params.set('country', selectedCountry);
+    params.set('role', selectedRole);
+    params.set('taxesCollapsed', collapseState.Taxes);
+    params.set('benefitsCollapsed', collapseState.Benefits);
+    params.set('otherCostsCollapsed', collapseState["Other Costs"]);
+
+    history.pushState(null, '', `?${params.toString()}`);
+}
+
+// Function to load state from URL parameters
+function loadStateFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const urlCountry = params.get('country');
+    const urlRole = params.get('role');
+    const urlTaxesCollapsed = params.get('taxesCollapsed');
+    const urlBenefitsCollapsed = params.get('benefitsCollapsed');
+    const urlOtherCostsCollapsed = params.get('otherCostsCollapsed');
+
+    let countryToLoad = localStorage.getItem('selectedCountry');
+    let roleToLoad = localStorage.getItem('selectedRole');
+    let collapseStateToLoad = {};
+
+    if (urlCountry && urlRole) {
+        countryToLoad = urlCountry;
+        roleToLoad = urlRole;
+
+        // Set collapse state from URL, defaulting to false if not present
+        collapseStateToLoad = {
+            Taxes: urlTaxesCollapsed === 'true',
+            Benefits: urlBenefitsCollapsed === 'true',
+            "Other Costs": urlOtherCostsCollapsed === 'true'
+        };
+        saveCollapseState(countryToLoad, roleToLoad, collapseStateToLoad); // Save URL state to localStorage
+    } else {
+        // If no URL params, load from localStorage
+        collapseStateToLoad = loadCollapseState(countryToLoad, roleToLoad);
+    }
+    
+    if (countryToLoad) {
+        countrySelect.value = countryToLoad;
+        countrySelect.dispatchEvent(new Event('change'));
+        if (roleToLoad) {
+            setTimeout(() => {
+                roleSelect.value = roleToLoad;
+                roleSelect.dispatchEvent(new Event('change'));
+            }, 0);
+        }
+    }
 }
 
 function displayTable() {
@@ -456,11 +506,28 @@ function displayTable() {
             dataRow.classList.add('double-bottom-border');
         }
         
+        // Add dark top border to specific rows conditionally
+        if (label === 'Base Salary') {
+            dataRow.classList.add('top-dark-border');
+        } else if (['Taxes', 'Benefits', 'Other Costs'].includes(label)) {
+            // Only add border if the section is collapsed
+            if (!collapseState[label]) {
+                dataRow.classList.add('top-dark-border');
+            }
+        }
+        
         // Label column
         const labelCell = document.createElement('td');
         labelCell.textContent = label;
-        // For US sub-labels, use a different class
-        if (selectedCountry === 'us' && (usSubLabels.includes(label) || (usOtherCostsSubLabels.includes(label) && label !== 'One time recruitment cost (15%)')) && label !== 'Benefits') {
+
+        // Check if the current label is one of the sub-labels
+        const isUSSubLabel = selectedCountry === 'us' && (
+            usSubLabels.includes(label) ||
+            usBenefitsSubLabels.includes(label) ||
+            (usOtherCostsSubLabels.includes(label) && label !== 'One time recruitment cost (15%)')
+        );
+
+        if (isUSSubLabel) {
             labelCell.className = 'sublabel-column';
         } else {
             labelCell.className = 'label-column';
@@ -744,6 +811,9 @@ function toggleCollapse(label, rowIndex, labels, country, role) {
     // Toggle the expanded class for the triangle
     currentRow.classList.toggle('expanded');
     
-    if (changed) saveCollapseState(country, role, collapseState);
+    if (changed) {
+        saveCollapseState(country, role, collapseState);
+        updateUrlParams(); // Update URL after collapse state changes
+    }
 }
 
