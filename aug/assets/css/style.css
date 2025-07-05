@@ -1,0 +1,168 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 60px auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.country-header {
+    padding-bottom: 4.8px; /* Reduced by 60% from default 12px */
+}
+
+.sub-header-value {
+    text-align: right;
+    font-weight: bold;
+    font-size: 0.7em; /* 70% of current size */
+    padding-top: 4.8px; /* Reduced by 60% from default 12px */
+    padding-bottom: 0;
+    vertical-align: bottom;
+}
+
+.main-header-row th {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+.currency {
+    text-align: right;
+    font-family: 'Courier New', monospace;
+}
+
+.label-column {
+    text-align: right;
+    font-weight: bold;
+}
+
+.augmentum-column {
+    border-left: 2px solid #ddd;
+}
+
+.sublabel-column {
+    text-align: right;
+    font-weight: normal;
+    padding-left: 2rem;
+    color: #333;
+}
+
+.thick-border {
+    border-bottom: 3px solid #f8f9fa !important;
+}
+
+.thick-top-border {
+    border-top: 3px solid #f8f9fa !important;
+}
+
+.total-real-cost-bg {
+    background-color: #e6f2fb !important; /* For Annual Cost and Monthly Cost rows */
+}
+
+.total-three-year-cost-bg {
+    background-color: #e6fbec !important; /* Pale green for Total 3 Year Cost row */
+}
+
+.double-top-border {
+    border-top: 3px double #333 !important; /* Double line border */
+}
+
+.double-bottom-border {
+    border-bottom: 3px double #333 !important; /* Double line border for bottom */
+}
+
+.bold-row-border {
+    border-bottom: 2px solid #222 !important;
+}
+
+.total-savings-row {
+    background-color: transparent !important;
+    border-top: 3px double #333 !important; /* Double line border */
+    border-bottom: 3px double #333 !important; /* Double line border for bottom */
+}
+
+.collapsible-row {
+    cursor: pointer;
+    position: relative;
+}
+
+.collapsible-row .label-column::after {
+    content: ' \00a0▶';
+    color: #666;
+    font-size: 12px;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+.collapsible-row.expanded .label-column::after {
+    content: ' \00a0▲';
+}
+
+.hidden-row {
+    visibility: collapse;
+}
+
+.collapsible-content {
+    transition: all 0.3s ease;
+}
+
+.company-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 150px;
+    height: auto;
+    z-index: 1000;
+} 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Augmentum ROI Calculator</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <img src="assets/images/logo.png" alt="Augmentum Global Logo" class="company-logo">
+    <div class="container">
+        <h1>Augmentum ROI Calculator</h1>
+        <form id="roi-form">
+            <label for="country-select">Select Country:</label>
+            <select id="country-select" required>
+                <option value="" disabled selected>Select a country</option>
+                <option value="uk">United Kingdom</option>
+                <option value="us">United States</option>
+            </select>
+            <div id="role-container" style="display:none;">
+                <label for="role-select">Select Role:</label>
+                <select id="role-select" required>
+                    <!-- Options will be populated dynamically -->
+                </select>
+            </div>
+        </form>
+        
+        <div id="table-container" style="display:none;">
+            <table id="roi-table">
+                <!-- Table will be populated dynamically -->
+            </table>
+        </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+</body>
+</html> 
