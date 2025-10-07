@@ -6,7 +6,8 @@ const rolesUK = [
 
 const rolesUS = [
     "Mid Senior Accounting Assistant",
-    "Staff Accountant (GL/ Industry)"
+    "Staff Accountant (GL/ Industry)",
+    "Senior Accountant (Mid Sized CPA Firm)"
 ];
 
 let currencySymbol; // Declare currencySymbol globally
@@ -177,6 +178,58 @@ const tableData = {
             ],
             column4: [
                 "$ 60,000", // Base Salary
+                "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" // All calculated/empty for Augmentum
+            ]
+        }
+    },
+    "Senior Accountant (Mid Sized CPA Firm)": {
+        us: {
+            column2: [
+                "$ 80,000", // Base Salary
+                "",   // Federal Unemployment (Calculated)
+                "", // State Unemployment (Calculated)
+                "",   // Workers' Compensation (Calculated)
+                "", // FICA Taxes (Calculated)
+                "", // Taxes (Calculated)
+                "$ 2,500", // Technology and equipment (Static)
+                "$ 8,000", // Health Insurance (Static)
+                "$ 2,400", // Retirement Plan Match (Static) - 3% of $80,000
+                "$ 1,000",   // Other Benefits (Static)
+                "",      // Benefits (Calculated)
+                "$ 1,200", // HR and Administrative (Static)
+                "$ 2,500", // Office-related (Static)
+                "$ 1,000",   // Other expenses (Static)
+                "", // Other Costs (Calculated)
+                "",        // One time recruitment cost (Calculated)
+                "",   // Year 1 Cost (Calculated)
+                "",   // Year 2 Cost (Calculated)
+                "",   // Year 3 Cost (Calculated)
+                ""    // Total 3 Year Cost (Calculated)
+            ],
+            column3: [
+                "$ 100,000", // Base Salary
+                "",   // Federal Unemployment (Calculated)
+                "", // State Unemployment (Calculated)
+                "",   // Workers' Compensation (Calculated)
+                "", // FICA Taxes (Calculated)
+                "", // Taxes (Calculated)
+                "$ 2,500", // Technology and equipment (Static)
+                "$ 8,000", // Health Insurance (Static)
+                "$ 3,000", // Retirement Plan Match (Static) - 3% of $100,000
+                "$ 1,000",   // Other Benefits (Static)
+                "",      // Benefits (Calculated)
+                "$ 1,200", // HR and Administrative (Static)
+                "$ 2,500", // Office-related (Static)
+                "$ 1,000", // Other expenses (Static)
+                "", // Other Costs (Calculated)
+                "",        // One time recruitment cost (Calculated)
+                "",   // Year 1 Cost (Calculated)
+                "",   // Year 2 Cost (Calculated)
+                "",   // Year 3 Cost (Calculated)
+                ""    // Total 3 Year Cost (Calculated)
+            ],
+            column4: [
+                "$ 72,000", // Base Salary
                 "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" // All calculated/empty for Augmentum
             ]
         }
